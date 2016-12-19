@@ -7,9 +7,7 @@ import random
 
 def random_list():
     count = random.randint(10, 100)
-    num_list = []
-    for i in range(0, count):
-        num_list.append(random.randint(0, 100))
+    num_list = random.sample(range(100), count)
     return num_list
 
 
