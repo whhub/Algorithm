@@ -6,7 +6,13 @@
 """
 
 from nose.tools import *
+from strstr import strstr
 
 
 def strstr_test():
-    #Assert
+    # Assert
+    assert_equal(-1, strstr("123123", "13"))
+    assert_equal(2, strstr("123123123", "31"))
+    assert_equal(-1, strstr("abc", "abcd"))
+    assert_equal(0, strstr("abc", ""))
+
