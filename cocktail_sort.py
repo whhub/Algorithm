@@ -23,5 +23,5 @@ def cocktail_sort(a):
 rand_nums = random_list()
 print("Before sort: ", len(rand_nums), rand_nums)
 cocktail_sort(rand_nums)
-print("After Bubble sort: ", len(rand_nums), rand_nums)
+print("After cocktail sort: ", len(rand_nums), rand_nums)
 
