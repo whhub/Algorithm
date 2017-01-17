@@ -34,11 +34,32 @@ def sort_i(a, left, right):
     sort_i(a, j+1, right)
 
 
+def sort_i_textbook(a, left, right):
+    if left >= right:
+        return
+
+    j = right
+    i = left
+
+    while i < j:
+        while j > i and a[j] > a[i]:
+            j -= 1
+        if j > i:
+            a[j], a[i] = a[i], a[j]
+        while j > i and a[j] > a[i]:
+            i += 1
+        if j > i:
+            a[j], a[i] = a[i], a[j]
+
+    sort_i_textbook(a, left, j-1)
+    sort_i_textbook(a, j+1, right)
+
+
 def quicksort(a):
     # global compare_count
     # global swap_count
     n = int(len(a))
-    sort_i(a, 0, n-1)
+    sort_i_textbook(a, 0, n-1)
     # print("Compared: %d, Swapped: %d" % (compare_count, swap_count))
     return a
 
